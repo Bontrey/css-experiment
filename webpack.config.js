@@ -31,7 +31,7 @@ const common = merge(
     appMountId: 'app'
   }), 
   parts.loadJSX(PATHS.app),
-  parts.setupSass(PATHS.app)
+  parts.extractCss(PATHS.app)
 );
 
 var config;

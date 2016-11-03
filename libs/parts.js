@@ -70,17 +70,23 @@ exports.loadJSX = function(paths) {
   };  
 };
 
-exports.setupSass = function(paths) {
+exports.extractCss = function(paths) {
   return {
     module: {
       loaders: [
         {
           test: /\.scss$/,
-          loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader',
+          loader: ExtractTextPlugin.extract(
+            'style-loader',
+            'css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]',
+            'sass-loader'),
           include: paths
         }
       ]
-    }
+    },
+    plugins: [
+      new ExtractTextPlugin('[name].css')
+    ]
   };
 };
 
