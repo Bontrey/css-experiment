@@ -78,14 +78,15 @@ exports.extractCss = function(paths) {
           test: /\.scss$/,
           loader: ExtractTextPlugin.extract(
             'style-loader',
-            'css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]',
-            'sass-loader'),
+            'css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader'),
           include: paths
         }
       ]
     },
     plugins: [
-      new ExtractTextPlugin('[name].css')
+      new ExtractTextPlugin('[name].css', {
+        allChunks: true
+      })
     ]
   };
 };
