@@ -25,6 +25,8 @@
     "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.24.0",
     "html-webpack-template": "^5.4.1",
+    "node-sass": "^3.11.1",
+    "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2",

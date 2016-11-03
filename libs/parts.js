@@ -70,13 +70,13 @@ exports.loadJSX = function(paths) {
   };  
 };
 
-exports.setupCSS = function(paths) {
+exports.setupSass = function(paths) {
   return {
     module: {
       loaders: [
         {
-          test: /\.css$/,
-          loaders: ['style', 'css'],
+          test: /\.scss$/,
+          loaders: ['style', 'css', 'sass'],
           include: paths
         }
       ]
