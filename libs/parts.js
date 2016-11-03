@@ -76,7 +76,7 @@ exports.setupSass = function(paths) {
       loaders: [
         {
           test: /\.scss$/,
-          loaders: ['style', 'css', 'sass'],
+          loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader',
           include: paths
         }
       ]

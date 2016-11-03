@@ -3,3 +3,8 @@ $red: #f00;
 body {
   background: $red;
 }
+
+.internal {
+  border: 1px solid black;
+  padding: 16px;
+}
